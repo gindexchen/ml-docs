@@ -10,7 +10,7 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.optimizers import RMSprop
 from keras import backend as K
 from keras.layers.merge import concatenate
-from sklearn.metrics import classification_report
+
 
 num_classes = 10
 epochs = 20
@@ -81,8 +81,6 @@ def compute_accuracy(y_true, y_pred):
     pred = y_pred.ravel() < 0.5
     return np.mean(pred == y_true)
     
-    #print(classification_report(y_true,y_pred))
-
 
 def accuracy(y_true, y_pred):
     '''Compute classification accuracy with a fixed threshold on distances.
